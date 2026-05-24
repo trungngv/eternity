@@ -3,3 +3,6 @@ __pycache__/
 .venv/
 .env
 knowledge/channels/*/episodes/*/transcript.txt
+dist/
+*.egg-info/
+.pytest_cache/
