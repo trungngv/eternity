@@ -1,10 +1,10 @@
 # src/eternity/summarizer.py
 import json
+import subprocess
 from pathlib import Path
-import anthropic
 
 
-SYSTEM_PROMPT = """You are a knowledge curator. Given a podcast transcript, extract 3-5 key lessons.
+SYSTEM_PROMPT = """You are a knowledge curator. Given a podcast transcript, extract 5-10 key lessons.
 
 For each lesson:
 1. A concise title (5-10 words)
@@ -35,6 +35,19 @@ def _truncate_transcript(transcript: str, max_tokens: int) -> str:
     return " ".join(words[:keep]) + " [...transcript truncated...] " + " ".join(words[-keep:])
 
 
+def _call_claude(system: str, user: str) -> str:
+    result = subprocess.run(
+        ["claude", "-p", "--system-prompt", system, "--model", "claude-sonnet-4-6"],
+        input=user,
+        capture_output=True,
+        text=True,
+        timeout=300,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"claude command failed: {result.stderr[:500]}")
+    return result.stdout.strip()
+
+
 def summarize_episode(
     video_id: str,
     video_title: str,
@@ -50,15 +63,7 @@ def summarize_episode(
     transcript = transcript_path.read_text()
     transcript = _truncate_transcript(transcript, max_tokens)
 
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=2000,
-        system=[{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}],
-        messages=[{"role": "user", "content": f"Title: {video_title}\n\nTranscript:\n{transcript}"}],
-    )
-
-    raw_text = response.content[0].text if response.content else ""
+    raw_text = _call_claude(SYSTEM_PROMPT, f"Title: {video_title}\n\nTranscript:\n{transcript}")
     # Strip markdown code fences if present
     raw_text = raw_text.strip()
     if raw_text.startswith("```"):

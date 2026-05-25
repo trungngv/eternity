@@ -1,8 +1,8 @@
 # src/eternity/synthesizer.py
 import json
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
-import anthropic
 
 
 SYSTEM_PROMPT = """You are a knowledge synthesizer. You maintain a living knowledge base of lessons from podcast episodes.
@@ -25,6 +25,19 @@ Respond with JSON only:
     "changes": ["description of each change"]
   }
 }"""
+
+
+def _call_claude(system: str, user: str) -> str:
+    result = subprocess.run(
+        ["claude", "-p", "--system-prompt", system, "--model", "claude-sonnet-4-6"],
+        input=user,
+        capture_output=True,
+        text=True,
+        timeout=300,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(f"claude command failed: {result.stderr[:500]}")
+    return result.stdout.strip()
 
 
 def _get_last_synthesis_date(synthesis_dir: Path) -> datetime | None:
@@ -64,16 +77,7 @@ def run_synthesis(knowledge_dir: Path) -> None:
     summaries_text = "\n\n---\n\n".join(p.read_text() for p in new_summaries)
     user_content = f"Current knowledge base:\n{current_kb}\n\n---\n\nNew episode summaries:\n{summaries_text}"
 
-    client = anthropic.Anthropic()
-    response = client.messages.create(
-        model="claude-sonnet-4-6",
-        max_tokens=4000,
-        system=[{"type": "text", "text": SYSTEM_PROMPT, "cache_control": {"type": "ephemeral"}}],
-        messages=[{"role": "user", "content": user_content}],
-    )
-
-    raw_text = response.content[0].text if response.content else ""
-    raw_text = raw_text.strip()
+    raw_text = _call_claude(SYSTEM_PROMPT, user_content)
     if raw_text.startswith("```"):
         raw_text = raw_text.split("\n", 1)[-1]
         raw_text = raw_text.rsplit("```", 1)[0]

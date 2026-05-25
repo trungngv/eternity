@@ -1,7 +1,6 @@
-# tests/test_synthesizer.py
 from datetime import datetime, timezone
 from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from eternity.synthesizer import run_synthesis, _get_last_synthesis_date, _collect_new_summaries
 
 FIXTURE_SUMMARY = Path(__file__).parent / "fixtures" / "sample_summary.md"
@@ -18,14 +17,6 @@ MOCK_SYNTHESIS_RESPONSE = """{
     "changes": ["Added lesson: Frameworks eliminate repeated decisions"]
   }
 }"""
-
-
-def _make_mock_client(response_text: str):
-    mock_response = MagicMock()
-    mock_response.content = [MagicMock(text=response_text)]
-    mock_client = MagicMock()
-    mock_client.messages.create.return_value = mock_response
-    return mock_client
 
 
 def test_get_last_synthesis_date_none_when_empty(tmp_path):
@@ -67,9 +58,9 @@ def test_run_synthesis_skips_when_no_new(tmp_path):
     (tmp_path / "channels").mkdir()
     (tmp_path / "synthesis").mkdir()
 
-    with patch("eternity.synthesizer.anthropic.Anthropic") as MockClient:
+    with patch("eternity.synthesizer._call_claude") as mock_claude:
         run_synthesis(tmp_path)
-        MockClient.assert_not_called()
+        mock_claude.assert_not_called()
 
 
 def test_run_synthesis_writes_output(tmp_path):
@@ -82,8 +73,7 @@ def test_run_synthesis_writes_output(tmp_path):
     master = tmp_path / "master_lessons.md"
     master.write_text("# Master Lessons\n")
 
-    with patch("eternity.synthesizer.anthropic.Anthropic") as MockClient:
-        MockClient.return_value = _make_mock_client(MOCK_SYNTHESIS_RESPONSE)
+    with patch("eternity.synthesizer._call_claude", return_value=MOCK_SYNTHESIS_RESPONSE):
         run_synthesis(tmp_path)
 
     assert master.read_text().startswith("# Master Lessons")

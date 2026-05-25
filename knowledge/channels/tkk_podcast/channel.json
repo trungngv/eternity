@@ -1,0 +1,50 @@
+{
+  "last_checked": "2026-05-25T10:29:19.547412+00:00",
+  "errors": [
+    {
+      "video_id": "j6jgpb8kCR0",
+      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+      "attempted_at": "2026-05-25T10:27:43.806167+00:00"
+    },
+    {
+      "video_id": "6JoUcQ1qmAc",
+      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+      "attempted_at": "2026-05-25T10:27:46.148254+00:00"
+    },
+    {
+      "video_id": "XCO7mqK7hs0",
+      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+      "attempted_at": "2026-05-25T10:27:48.897708+00:00"
+    },
+    {
+      "video_id": "BRcVDhOkij4",
+      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+      "attempted_at": "2026-05-25T10:27:51.391156+00:00"
+    },
+    {
+      "video_id": "xSwHXjH8Og4",
+      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
+      "attempted_at": "2026-05-25T10:27:53.753478+00:00"
+    },
+    {
+      "video_id": "zyvuM3J9QqQ",
+      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8WJ47jSJ9a38VHwbZw'}",
+      "attempted_at": "2026-05-25T10:29:04.390591+00:00"
+    },
+    {
+      "video_id": "Wp1Wn6QkkKU",
+      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8WeCaTEmh44i6eCXoB'}",
+      "attempted_at": "2026-05-25T10:29:09.064655+00:00"
+    },
+    {
+      "video_id": "NWZZEa9BURw",
+      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8X3S5KNTzakRKoLbUK'}",
+      "attempted_at": "2026-05-25T10:29:14.533508+00:00"
+    },
+    {
+      "video_id": "zChiVdbSp5M",
+      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8XQoww5yca8YUkMXRR'}",
+      "attempted_at": "2026-05-25T10:29:19.547348+00:00"
+    }
+  ]
+}
