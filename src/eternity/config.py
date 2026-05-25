@@ -27,12 +27,18 @@ def load_channels(config_path: Path) -> list[Channel]:
         data = yaml.safe_load(f)
     channels = []
     for c in data["channels"]:
-        filters = ChannelFilters(**c.get("filters", {}))
-        channels.append(Channel(
-            id=c["id"],
-            name=c["name"],
-            url=c["url"],
-            check_frequency=c["check_frequency"],
-            filters=filters,
-        ))
+        try:
+            filters = ChannelFilters(**c.get("filters", {}))
+        except TypeError as e:
+            raise ValueError(f"Invalid filter key in channel '{c.get('id', '?')}': {e}") from e
+        try:
+            channels.append(Channel(
+                id=c["id"],
+                name=c["name"],
+                url=c["url"],
+                check_frequency=c["check_frequency"],
+                filters=filters,
+            ))
+        except KeyError as e:
+            raise ValueError(f"Channel entry missing required field {e}") from e
     return channels

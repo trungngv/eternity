@@ -41,6 +41,23 @@ def test_load_full_config(tmp_path):
     assert ch.filters.max_transcript_tokens == 50000
 
 
+def test_unknown_filter_key_raises_value_error(tmp_path):
+    yaml_text = """\
+channels:
+  - id: test
+    name: Test
+    url: https://youtube.com/@test
+    check_frequency: daily
+    filters:
+      unknown_key: 42
+"""
+    f = tmp_path / "channels.yaml"
+    f.write_text(yaml_text)
+    import pytest
+    with pytest.raises(ValueError, match="Invalid filter key"):
+        load_channels(f)
+
+
 def test_load_minimal_config_uses_defaults(tmp_path):
     f = tmp_path / "channels.yaml"
     f.write_text(MINIMAL_YAML)
