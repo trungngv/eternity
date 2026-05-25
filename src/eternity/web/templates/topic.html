@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}{{ topic | title }} — Eternity{% endblock %}
+{% block content %}
+<p class="meta"><a href="/lessons">← Master Lessons</a></p>
+{{ content | safe }}
+{% endblock %}

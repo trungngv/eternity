@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}{{ channel_id }} — Eternity{% endblock %}
+{% block content %}
+<h1>{{ channel_id | replace("_", " ") | title }}</h1>
+<p class="meta"><a href="/">← Home</a></p>
+{% if episodes %}
+<ul class="episodes">
+  {% for ep in episodes %}
+  <li><a href="/channels/{{ channel_id }}/episodes/{{ ep }}">{{ ep }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No episodes processed yet.</p>
+{% endif %}
+{% endblock %}
