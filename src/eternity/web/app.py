@@ -2,7 +2,7 @@ import subprocess
 from pathlib import Path
 
 import mistune
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
@@ -12,6 +12,13 @@ TEMPLATES_DIR = Path(__file__).parent / "templates"
 app = FastAPI(title="Eternity")
 templates = Jinja2Templates(directory=str(TEMPLATES_DIR))
 md = mistune.create_markdown()
+
+
+def _safe_path(path: Path) -> Path:
+    resolved = path.resolve()
+    if not resolved.is_relative_to(KNOWLEDGE_DIR.resolve()):
+        raise HTTPException(status_code=404)
+    return path
 
 
 def render_md(path: Path) -> str:
@@ -56,7 +63,7 @@ async def channel(request: Request, channel_id: str):
 
 @app.get("/channels/{channel_id}/episodes/{slug}", response_class=HTMLResponse)
 async def episode(request: Request, channel_id: str, slug: str):
-    path = KNOWLEDGE_DIR / "channels" / channel_id / "episodes" / slug / "summary.md"
+    path = _safe_path(KNOWLEDGE_DIR / "channels" / channel_id / "episodes" / slug / "summary.md")
     return templates.TemplateResponse(request, "episode.html", {
         "channel_id": channel_id,
         "slug": slug,
@@ -73,7 +80,7 @@ async def lessons(request: Request):
 
 @app.get("/topics/{topic}", response_class=HTMLResponse)
 async def topic(request: Request, topic: str):
-    path = KNOWLEDGE_DIR / "topics" / f"{topic}.md"
+    path = _safe_path(KNOWLEDGE_DIR / "topics" / f"{topic}.md")
     return templates.TemplateResponse(request, "topic.html", {
         "topic": topic,
         "content": render_md(path),
@@ -91,7 +98,7 @@ async def synthesis_list(request: Request):
 
 @app.get("/synthesis/{week}", response_class=HTMLResponse)
 async def synthesis_week(request: Request, week: str):
-    path = KNOWLEDGE_DIR / "synthesis" / f"{week}.md"
+    path = _safe_path(KNOWLEDGE_DIR / "synthesis" / f"{week}.md")
     return templates.TemplateResponse(request, "synthesis.html", {
         "weeks": [],
         "week": week,
@@ -104,7 +111,7 @@ async def search(request: Request, q: str = ""):
     results = []
     if q and KNOWLEDGE_DIR.exists():
         proc = subprocess.run(
-            ["grep", "-ril", q, str(KNOWLEDGE_DIR)],
+            ["grep", "-rilF", "--", q, str(KNOWLEDGE_DIR)],
             capture_output=True, text=True, timeout=10,
         )
         for line in proc.stdout.strip().splitlines():
