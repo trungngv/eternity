@@ -4,7 +4,7 @@ from eternity.watcher import (
     VideoEntry,
     _passes_filters,
     _is_processed,
-    _episode_dir_name,
+    episode_dir_name,
     _slugify,
 )
 from eternity.config import ChannelFilters
@@ -67,7 +67,7 @@ def test_accepts_valid_video():
 
 def test_is_processed_true(tmp_path):
     video = make_video()
-    dir_name = _episode_dir_name(video)
+    dir_name = episode_dir_name(video)
     (tmp_path / dir_name).mkdir()
     assert _is_processed(video, tmp_path)
 
@@ -91,7 +91,7 @@ def test_slugify_truncates_at_60():
 
 def test_episode_dir_name_format():
     video = make_video(title="Great Episode", days_ago=0)
-    name = _episode_dir_name(video)
+    name = episode_dir_name(video)
     today = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
     assert name.startswith(today)
     assert "great-episode" in name

@@ -19,8 +19,8 @@ def cli():
 def process(channel):
     """Fetch and summarize new episodes from all channels (or one)."""
     from .config import load_channels
-    from .watcher import find_new_episodes, _episode_dir_name
-    from .fetcher import fetch_transcript, FetchError
+    from .watcher import find_new_episodes, episode_dir_name
+    from .fetcher import fetch_transcript
     from .summarizer import summarize_episode
 
     channels = load_channels(CONFIG_PATH)
@@ -45,7 +45,7 @@ def process(channel):
         click.echo(f"  {len(new_episodes)} new episode(s) to process")
 
         for video in new_episodes:
-            slug = _episode_dir_name(video)
+            slug = episode_dir_name(video)
             episode_dir = channel_dir / "episodes" / slug
             episode_dir.mkdir(parents=True, exist_ok=True)
 

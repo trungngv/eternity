@@ -21,13 +21,13 @@ def _slugify(title: str) -> str:
     return slug[:60].strip("-")
 
 
-def _episode_dir_name(entry: VideoEntry) -> str:
+def episode_dir_name(entry: VideoEntry) -> str:
     y, m, d = entry.upload_date[:4], entry.upload_date[4:6], entry.upload_date[6:8]
     return f"{y}-{m}-{d}_{_slugify(entry.title)}"
 
 
 def _is_processed(entry: VideoEntry, episodes_dir: Path) -> bool:
-    return (episodes_dir / _episode_dir_name(entry)).exists()
+    return (episodes_dir / episode_dir_name(entry)).exists()
 
 
 def _passes_filters(entry: VideoEntry, filters) -> bool:
