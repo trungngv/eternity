@@ -22,7 +22,8 @@ def _slugify(title: str) -> str:
 
 
 def episode_dir_name(entry: VideoEntry) -> str:
-    y, m, d = entry.upload_date[:4], entry.upload_date[4:6], entry.upload_date[6:8]
+    date = entry.upload_date or datetime.now(tz=timezone.utc).strftime("%Y%m%d")
+    y, m, d = date[:4], date[4:6], date[6:8]
     return f"{y}-{m}-{d}_{_slugify(entry.title)}"
 
 
@@ -40,15 +41,16 @@ def _passes_filters(entry: VideoEntry, filters) -> bool:
     for keyword in filters.exclude_title_keywords:
         if keyword.lower() in title_lower:
             return False
-    cutoff = datetime.now(tz=timezone.utc) - timedelta(days=filters.backfill_days)
-    upload_dt = datetime(
-        int(entry.upload_date[:4]),
-        int(entry.upload_date[4:6]),
-        int(entry.upload_date[6:8]),
-        tzinfo=timezone.utc,
-    )
-    if upload_dt < cutoff:
-        return False
+    if entry.upload_date and len(entry.upload_date) == 8:
+        cutoff = datetime.now(tz=timezone.utc) - timedelta(days=filters.backfill_days)
+        upload_dt = datetime(
+            int(entry.upload_date[:4]),
+            int(entry.upload_date[4:6]),
+            int(entry.upload_date[6:8]),
+            tzinfo=timezone.utc,
+        )
+        if upload_dt < cutoff:
+            return False
     return True
 
 
@@ -64,7 +66,7 @@ def list_channel_videos(channel_url: str) -> list[VideoEntry]:
         entries.append(VideoEntry(
             id=item["id"],
             title=item.get("title", ""),
-            upload_date=item.get("upload_date", "19700101"),
+            upload_date=item.get("upload_date") or "",
             duration=item.get("duration", 0) or 0,
             webpage_url=item.get("webpage_url", f"https://youtube.com/watch?v={item['id']}"),
         ))
