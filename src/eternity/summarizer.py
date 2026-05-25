@@ -58,7 +58,21 @@ def summarize_episode(
         messages=[{"role": "user", "content": f"Title: {video_title}\n\nTranscript:\n{transcript}"}],
     )
 
-    data = json.loads(response.content[0].text)
+    raw_text = response.content[0].text if response.content else ""
+    # Strip markdown code fences if present
+    raw_text = raw_text.strip()
+    if raw_text.startswith("```"):
+        raw_text = raw_text.split("\n", 1)[-1]  # remove opening fence line
+        raw_text = raw_text.rsplit("```", 1)[0]  # remove closing fence
+
+    try:
+        data = json.loads(raw_text)
+    except json.JSONDecodeError as e:
+        raise ValueError(f"Claude returned invalid JSON for {video_id}: {e}\nRaw: {raw_text[:200]}") from e
+
+    if "lessons" not in data:
+        raise ValueError(f"Claude response missing 'lessons' key for {video_id}")
+
     date_str = f"{upload_date[:4]}-{upload_date[4:6]}-{upload_date[6:8]}"
 
     lines = [
@@ -74,7 +88,7 @@ def summarize_episode(
         lines += [
             f"### {lesson['title']}",
             f"> \"{lesson['quote']}\"",
-            f"[Watch this moment →]({video_url}&t={ts}s)",
+            f"[Watch this moment →]({video_url}{'&' if '?' in video_url else '?'}t={ts}s)",
             "",
             lesson["summary"],
             "",

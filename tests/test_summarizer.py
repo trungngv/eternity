@@ -3,7 +3,7 @@ from pathlib import Path
 from unittest.mock import patch, MagicMock
 from eternity.summarizer import summarize_episode, _truncate_transcript
 
-FIXTURE_TRANSCRIPT = Path("tests/fixtures/sample_transcript.txt")
+FIXTURE_TRANSCRIPT = Path(__file__).parent / "fixtures" / "sample_transcript.txt"
 
 MOCK_CLAUDE_RESPONSE = """{
   "lessons": [
