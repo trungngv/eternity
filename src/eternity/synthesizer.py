@@ -78,7 +78,10 @@ def run_synthesis(knowledge_dir: Path) -> None:
         raw_text = raw_text.split("\n", 1)[-1]
         raw_text = raw_text.rsplit("```", 1)[0]
 
-    data = json.loads(raw_text)
+    try:
+        data = json.loads(raw_text)
+    except json.JSONDecodeError as e:
+        raise RuntimeError(f"Synthesis failed: Claude returned unparseable JSON: {e}\n{raw_text[:200]}") from e
     master_path.write_text(data["master_lessons_md"])
 
     topics_dir = knowledge_dir / "topics"
