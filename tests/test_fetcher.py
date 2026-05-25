@@ -64,3 +64,50 @@ def test_segments_to_text_groups_by_minute():
 
 def test_segments_to_text_empty():
     assert segments_to_text([]) == ""
+
+
+from unittest.mock import patch
+from eternity.fetcher import fetch_transcript, FetchError
+
+
+def test_fetch_uses_yt_dlp_when_vtt_available(tmp_path):
+    output_path = tmp_path / "transcript.txt"
+    vtt_file = tmp_path / "abc123.en.vtt"
+    vtt_file.write_text("WEBVTT\n\n00:00:01.000 --> 00:00:05.000\nHello world\n")
+
+    with patch("eternity.fetcher._download_subtitles", return_value=vtt_file):
+        fetch_transcript("abc123", output_path)
+
+    assert output_path.exists()
+    assert "Hello world" in output_path.read_text()
+
+
+def test_fetch_falls_back_to_api_when_no_vtt(tmp_path):
+    from types import SimpleNamespace
+    output_path = tmp_path / "transcript.txt"
+    mock_entries = [
+        SimpleNamespace(start=0.0, duration=5.0, text="Hello world"),
+        SimpleNamespace(start=65.0, duration=5.0, text="New minute content"),
+    ]
+
+    with patch("eternity.fetcher._download_subtitles", return_value=None), \
+         patch("eternity.fetcher.YouTubeTranscriptApi") as MockAPI:
+        MockAPI.return_value.fetch.return_value = mock_entries
+        fetch_transcript("abc123", output_path)
+
+    content = output_path.read_text()
+    assert "Hello world" in content
+    assert "New minute content" in content
+
+
+def test_fetch_raises_when_both_fail(tmp_path):
+    import pytest
+    from youtube_transcript_api import NoTranscriptFound
+    output_path = tmp_path / "transcript.txt"
+
+    with patch("eternity.fetcher._download_subtitles", return_value=None), \
+         patch("eternity.fetcher.YouTubeTranscriptApi") as MockAPI:
+        MockAPI.return_value.fetch.side_effect = NoTranscriptFound("abc123", ["en"], None)
+
+        with pytest.raises(FetchError):
+            fetch_transcript("abc123", output_path)

@@ -1,5 +1,9 @@
 from dataclasses import dataclass
 import re
+import shutil
+import tempfile
+from pathlib import Path
+from youtube_transcript_api import YouTubeTranscriptApi
 
 
 @dataclass
@@ -73,3 +77,54 @@ def segments_to_text(segments: list[TranscriptSegment]) -> str:
     if buffer:
         flush(current_minute)
     return "\n".join(lines)
+
+
+def _download_subtitles(video_id: str, output_dir: Path) -> Path | None:
+    import yt_dlp
+    ydl_opts = {
+        "writeautomaticsub": True,
+        "writesubtitles": True,
+        "subtitlesformat": "vtt",
+        "subtitleslangs": ["en", "en-US", "en-GB"],
+        "skip_download": True,
+        "outtmpl": str(output_dir / "%(id)s.%(ext)s"),
+        "quiet": True,
+        "no_warnings": True,
+    }
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.download([f"https://youtube.com/watch?v={video_id}"])
+    vtt_files = list(output_dir.glob("*.vtt"))
+    return vtt_files[0] if vtt_files else None
+
+
+def fetch_transcript(video_id: str, output_path: Path) -> None:
+    tmp = Path(tempfile.mkdtemp())
+    try:
+        vtt_path = _download_subtitles(video_id, tmp)
+        if vtt_path:
+            segments = parse_vtt(vtt_path.read_text(encoding="utf-8", errors="replace"))
+            if segments:
+                output_path.write_text(segments_to_text(segments))
+                return
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+    _fetch_via_api(video_id, output_path)
+
+
+def _fetch_via_api(video_id: str, output_path: Path) -> None:
+    from youtube_transcript_api import NoTranscriptFound, TranscriptsDisabled
+
+    try:
+        entries = YouTubeTranscriptApi().fetch(
+            video_id, languages=["en", "en-US", "en-GB"]
+        )
+        lines = []
+        for entry in entries:
+            start = int(entry.start)
+            h, m = divmod(start // 60, 60)
+            ts = f"{h}:{m:02d}" if h else f"0:{m:02d}"
+            lines.append(f"[{ts}] {entry.text}")
+        output_path.write_text("\n".join(lines))
+    except (NoTranscriptFound, TranscriptsDisabled) as e:
+        raise FetchError(f"No transcript available for {video_id}: {e}") from e
