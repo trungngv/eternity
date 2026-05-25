@@ -6,3 +6,4 @@ knowledge/channels/*/episodes/*/transcript.txt
 dist/
 *.egg-info/
 .pytest_cache/
+.claude/settings.local.json
