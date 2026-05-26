@@ -13,11 +13,13 @@
 ## Key Commands
 
 ```bash
-uv run pytest -v                          # run tests (always prefix with uv run)
-uv run eternity process                   # fetch + summarize new episodes
-uv run eternity process --channel tkk_podcast  # single channel
-uv run eternity synthesize                # weekly KB consolidation
-uv run eternity serve                     # web app at http://localhost:8000
+uv run pytest -v                               # run tests (always prefix with uv run)
+uv run eternity fetch                          # check for new episodes & download transcripts
+uv run eternity fetch --channel tkk_podcast    # single channel
+uv run eternity summarize-episodes             # generate lesson summaries
+uv run eternity summarize-episodes --channel tkk_podcast
+uv run eternity synthesize                     # weekly KB consolidation
+uv run eternity serve                          # web app at http://localhost:8000
 ```
 
 ---
@@ -42,8 +44,8 @@ uv run eternity serve                     # web app at http://localhost:8000
 ```
 knowledge/
   channels/{channel_id}/
-    channel.json              # last_checked, errors[]
-    episodes/{YYYY-MM-DD_slug}/
+    channel.json              # centralized manifest: {last_checked, videos: [{video_id, title, url, fetched_date, summarized_date, error}]}
+    episodes/{slug}/          # slug derived from title only (no date prefix)
       transcript.txt          # gitignored, idempotent (skip if exists)
       summary.md              # skip if exists
   topics/{slug}.md
@@ -52,7 +54,9 @@ knowledge/
 config/channels.yaml
 ```
 
-**Idempotency:** `transcript.txt` and `summary.md` are never overwritten. Re-running `process` is safe.
+**Deduplication:** Videos tracked by `video_id` in `channel.json`. Already-fetched videos are skipped by comparing against `videos[].video_id`.
+
+**Idempotency:** `transcript.txt` and `summary.md` never overwritten. Episodes without transcripts are skipped during summarization.
 
 ---
 

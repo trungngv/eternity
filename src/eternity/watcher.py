@@ -22,9 +22,8 @@ def _slugify(title: str) -> str:
 
 
 def episode_dir_name(entry: VideoEntry) -> str:
-    date = entry.upload_date or datetime.now(tz=timezone.utc).strftime("%Y%m%d")
-    y, m, d = date[:4], date[4:6], date[6:8]
-    return f"{y}-{m}-{d}_{_slugify(entry.title)}"
+    """Generate episode directory name from video title only (no date prefix)."""
+    return _slugify(entry.title)
 
 
 def _is_processed(entry: VideoEntry, episodes_dir: Path) -> bool:
@@ -74,25 +73,22 @@ def list_channel_videos(channel_url: str) -> list[VideoEntry]:
 
 
 def find_new_episodes(channel, channel_dir: Path) -> list[VideoEntry]:
-    episodes_dir = channel_dir / "episodes"
-    episodes_dir.mkdir(parents=True, exist_ok=True)
+    """Find episodes that haven't been fetched yet (based on channel.json)."""
+    import json
     
-    # Build set of already-fetched video IDs (check all episode.json files)
+    channel_json = channel_dir / "channel.json"
     fetched_ids = set()
-    for episode_dir in episodes_dir.iterdir():
-        if not episode_dir.is_dir():
-            continue
-        metadata_path = episode_dir / "episode.json"
-        if metadata_path.exists():
-            try:
-                import json
-                metadata = json.loads(metadata_path.read_text())
-                fetched_ids.add(metadata["video_id"])
-            except (json.JSONDecodeError, KeyError):
-                pass
+    
+    # Read already-fetched video IDs from channel.json
+    if channel_json.exists():
+        try:
+            state = json.loads(channel_json.read_text())
+            fetched_ids = {v["video_id"] for v in state.get("videos", [])}
+        except (json.JSONDecodeError, KeyError):
+            pass
     
     all_videos = list_channel_videos(channel.url)
     filtered = [v for v in all_videos if _passes_filters(v, channel.filters)]
-    # Skip videos we've already fetched (check by video ID)
+    # Skip videos we've already fetched
     unprocessed = [v for v in filtered if v.id not in fetched_ids]
     return unprocessed[: channel.filters.max_episodes_per_run]

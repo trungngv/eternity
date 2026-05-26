@@ -33,11 +33,9 @@ def fetch(channel):
         channel_dir.mkdir(parents=True, exist_ok=True)
 
         channel_json = channel_dir / "channel.json"
-        state: dict = {"last_checked": "", "errors": []}
+        state: dict = {"last_checked": "", "videos": []}
         if channel_json.exists():
             state = json.loads(channel_json.read_text())
-        if "errors" not in state:
-            state["errors"] = []
 
         click.echo(f"Checking {ch.name}...")
         new_episodes = find_new_episodes(ch, channel_dir)
@@ -49,29 +47,44 @@ def fetch(channel):
             episode_dir.mkdir(parents=True, exist_ok=True)
 
             transcript_path = episode_dir / "transcript.txt"
-            metadata_path = episode_dir / "episode.json"
 
             click.echo(f"  -> {video.title}")
             try:
                 if not transcript_path.exists():
                     fetch_transcript(video.id, transcript_path)
                 
-                # Store episode metadata for later use by summarize
-                metadata = {
+                # Add video entry to channel.json
+                now = datetime.now(tz=timezone.utc).isoformat()
+                video_entry = {
                     "video_id": video.id,
                     "title": video.title,
                     "url": video.webpage_url,
-                    "upload_date": video.upload_date,
+                    "fetched_date": now,
+                    "summarized_date": None,
+                    "error": None,
                 }
-                metadata_path.write_text(json.dumps(metadata, indent=2))
+                # Update or add entry
+                existing = [v for v in state["videos"] if v["video_id"] == video.id]
+                if existing:
+                    existing[0].update(video_entry)
+                else:
+                    state["videos"].append(video_entry)
+                
                 click.echo("    Transcript saved")
             except Exception as e:
                 click.echo(f"    Error: {e}", err=True)
-                state["errors"].append({
+                video_entry = {
                     "video_id": video.id,
-                    "reason": str(e),
-                    "attempted_at": datetime.now(tz=timezone.utc).isoformat(),
-                })
+                    "title": video.title,
+                    "url": video.webpage_url,
+                    "fetched_date": None,
+                    "summarized_date": None,
+                    "error": str(e),
+                }
+                # Add error entry
+                existing = [v for v in state["videos"] if v["video_id"] == video.id]
+                if not existing:
+                    state["videos"].append(video_entry)
 
         state["last_checked"] = datetime.now(tz=timezone.utc).isoformat()
         channel_json.write_text(json.dumps(state, indent=2))
@@ -82,6 +95,7 @@ def fetch(channel):
 def summarize_episodes(channel):
     """Summarize episodes that have transcripts but no summaries."""
     from .config import load_channels
+    from .watcher import episode_dir_name
     from .summarizer import summarize_episode
 
     channels = load_channels(CONFIG_PATH)
@@ -95,48 +109,65 @@ def summarize_episodes(channel):
         if not channel_dir.exists():
             continue
 
-        episodes_dir = channel_dir / "episodes"
-        if not episodes_dir.exists():
+        channel_json = channel_dir / "channel.json"
+        if not channel_json.exists():
             continue
+
+        state = json.loads(channel_json.read_text())
+        videos = state.get("videos", [])
 
         click.echo(f"Summarizing {ch.name}...")
         count = 0
 
-        for episode_dir in sorted(episodes_dir.iterdir()):
-            if not episode_dir.is_dir():
+        for video_entry in sorted(videos, key=lambda v: v.get("fetched_date", "")):
+            # Skip if already summarized or has an error
+            if video_entry.get("summarized_date") or video_entry.get("error"):
                 continue
 
+            # Skip if not successfully fetched
+            if not video_entry.get("fetched_date"):
+                continue
+
+            # Build episode directory and check for transcript
+            # Create a temporary VideoEntry to get the slug
+            from .watcher import VideoEntry
+            temp_entry = VideoEntry(
+                id=video_entry["video_id"],
+                title=video_entry["title"],
+                upload_date="",
+                duration=0,
+                webpage_url=video_entry["url"],
+            )
+            slug = episode_dir_name(temp_entry)
+            episode_dir = channel_dir / "episodes" / slug
             transcript_path = episode_dir / "transcript.txt"
             summary_path = episode_dir / "summary.md"
-            metadata_path = episode_dir / "episode.json"
 
             if not transcript_path.exists() or summary_path.exists():
                 continue
 
-            # Read episode metadata (saved during fetch)
-            if not metadata_path.exists():
-                click.echo(f"  -> {episode_dir.name} (skipped: no metadata)")
-                continue
-
-            metadata = json.loads(metadata_path.read_text())
-
-            click.echo(f"  -> {metadata['title']}")
+            click.echo(f"  -> {video_entry['title']}")
 
             try:
                 summarize_episode(
-                    video_id=metadata["video_id"],
-                    video_title=metadata["title"],
-                    video_url=metadata["url"],
-                    upload_date=metadata["upload_date"],
+                    video_id=video_entry["video_id"],
+                    video_title=video_entry["title"],
+                    video_url=video_entry["url"],
+                    upload_date=video_entry.get("upload_date", ""),
                     transcript_path=transcript_path,
                     summary_path=summary_path,
                     max_tokens=ch.filters.max_transcript_tokens,
                 )
+                # Update summarized_date in channel.json
+                video_entry["summarized_date"] = datetime.now(tz=timezone.utc).isoformat()
                 click.echo("    Done")
                 count += 1
             except Exception as e:
                 click.echo(f"    Error: {e}", err=True)
+                video_entry["error"] = str(e)
 
+        # Save updated state
+        channel_json.write_text(json.dumps(state, indent=2))
         click.echo(f"  Summarized {count} episode(s)")
 
 

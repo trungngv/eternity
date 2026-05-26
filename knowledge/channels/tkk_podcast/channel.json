@@ -1,50 +1,125 @@
 {
-  "last_checked": "2026-05-25T10:29:19.547412+00:00",
-  "errors": [
-    {
-      "video_id": "j6jgpb8kCR0",
-      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
-      "attempted_at": "2026-05-25T10:27:43.806167+00:00"
-    },
+  "last_checked": "2026-05-26T00:00:00+00:00",
+  "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
-      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
-      "attempted_at": "2026-05-25T10:27:46.148254+00:00"
+      "title": "Greg Brockman: AI Is About to Go Parabolic! Here's What's Next",
+      "url": "https://youtube.com/watch?v=6JoUcQ1qmAc",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
     },
     {
-      "video_id": "XCO7mqK7hs0",
-      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
-      "attempted_at": "2026-05-25T10:27:48.897708+00:00"
-    },
-    {
-      "video_id": "BRcVDhOkij4",
-      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
-      "attempted_at": "2026-05-25T10:27:51.391156+00:00"
-    },
-    {
-      "video_id": "xSwHXjH8Og4",
-      "reason": "\"Could not resolve authentication method. Expected one of api_key, auth_token, or credentials to be set. Or for one of the `X-Api-Key` or `Authorization` headers to be explicitly omitted\"",
-      "attempted_at": "2026-05-25T10:27:53.753478+00:00"
-    },
-    {
-      "video_id": "zyvuM3J9QqQ",
-      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8WJ47jSJ9a38VHwbZw'}",
-      "attempted_at": "2026-05-25T10:29:04.390591+00:00"
-    },
-    {
-      "video_id": "Wp1Wn6QkkKU",
-      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8WeCaTEmh44i6eCXoB'}",
-      "attempted_at": "2026-05-25T10:29:09.064655+00:00"
-    },
-    {
-      "video_id": "NWZZEa9BURw",
-      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8X3S5KNTzakRKoLbUK'}",
-      "attempted_at": "2026-05-25T10:29:14.533508+00:00"
+      "video_id": "QBznUHAopxU",
+      "title": "Marketing Expert: The Playbook Behind Every Great Campaign | Rory Sutherland",
+      "url": "https://youtube.com/watch?v=QBznUHAopxU",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
     },
     {
       "video_id": "zChiVdbSp5M",
-      "reason": "Error code: 429 - {'type': 'error', 'error': {'type': 'rate_limit_error', 'message': \"This request would exceed your organization's rate limit of 30,000 input tokens per minute (org: 22e84f3d-93f6-4e23-9d43-8a9b43151ac6, model: claude-sonnet-4-6). For details, refer to: https://docs.claude.com/en/api/rate-limits. You can see the response headers for current usage. Reduce the prompt length or the maximum tokens requested, or try again later. View your current limits at https://console.anthropic.com/settings/limits. To raise this limit, purchase credits to advance to the next usage tier at https://console.anthropic.com/settings/billing.\"}, 'request_id': 'req_011CbP8XQoww5yca8YUkMXRR'}",
-      "attempted_at": "2026-05-25T10:29:19.547348+00:00"
+      "title": "The Silent Cost of Bad Habits - James Clear",
+      "url": "https://youtube.com/watch?v=zChiVdbSp5M",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "0jbbinhLAlw",
+      "title": "The CEO Who Lost 80% of His Company's Value (And Built It Back): Vlad Tenev",
+      "url": "https://youtube.com/watch?v=0jbbinhLAlw",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "zyvuM3J9QqQ",
+      "title": "Managing $2 Trillion: AI Bubbles & Contrarian Investing | Nicolai Tangen",
+      "url": "https://youtube.com/watch?v=zyvuM3J9QqQ",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "Wp1Wn6QkkKU",
+      "title": "The Psychology of Power | Michael Ovitz",
+      "url": "https://youtube.com/watch?v=Wp1Wn6QkkKU",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "WvJg4SMzzQ8",
+      "title": "The Mindset Expert: Perform Under Pressure When Everyone Else Chokes | Jim Murphy",
+      "url": "https://youtube.com/watch?v=WvJg4SMzzQ8",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "NWZZEa9BURw",
+      "title": "Morgan Housel: The Wealth Secrets No One Teaches You",
+      "url": "https://youtube.com/watch?v=NWZZEa9BURw",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "BRcVDhOkij4",
+      "title": "An Honest Conversation with The Top Principle In America",
+      "url": "https://youtube.com/watch?v=BRcVDhOkij4",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "E4wXp-DaW8g",
+      "title": "No. 1 Forensic Accountant: The Coming AI Collapse | Anthony Scilipoti",
+      "url": "https://youtube.com/watch?v=E4wXp-DaW8g",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "Go5wjr20mTs",
+      "title": "Pierre Poilievre: Canada Is About to Collapse",
+      "url": "https://youtube.com/watch?v=Go5wjr20mTs",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "j6jgpb8kCR0",
+      "title": "Harvey CEO: How a 31-year-old Runs an $11B Company",
+      "url": "https://youtube.com/watch?v=j6jgpb8kCR0",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "XCO7mqK7hs0",
+      "title": "Stop Wasting Time - Here's How to Think Big | Mario Harik",
+      "url": "https://youtube.com/watch?v=XCO7mqK7hs0",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "h1fIVmf7uaw",
+      "title": "Lessons from Building Panera, CAVA, and Au Bon Pain | Ron Shaich",
+      "url": "https://youtube.com/watch?v=h1fIVmf7uaw",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "xSwHXjH8Og4",
+      "title": "Investing in What Stays the Same | Connor Teskey",
+      "url": "https://youtube.com/watch?v=xSwHXjH8Og4",
+      "fetched_date": "2026-05-25T00:00:00+00:00",
+      "summarized_date": null,
+      "error": null
     }
   ]
 }

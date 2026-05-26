@@ -92,6 +92,4 @@ def test_slugify_truncates_at_60():
 def test_episode_dir_name_format():
     video = make_video(title="Great Episode", days_ago=0)
     name = episode_dir_name(video)
-    today = datetime.now(tz=timezone.utc).strftime("%Y-%m-%d")
-    assert name.startswith(today)
-    assert "great-episode" in name
+    assert name == "great-episode"
