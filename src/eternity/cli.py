@@ -95,7 +95,7 @@ def fetch(channel):
 def summarize_episodes(channel):
     """Summarize episodes that have transcripts but no summaries."""
     from .config import load_channels
-    from .watcher import episode_dir_name
+    from .watcher import episode_dir_name, VideoEntry
     from .summarizer import summarize_episode
 
     channels = load_channels(CONFIG_PATH)
@@ -118,19 +118,18 @@ def summarize_episodes(channel):
 
         click.echo(f"Summarizing {ch.name}...")
         count = 0
+        updated = 0
 
         for video_entry in sorted(videos, key=lambda v: v.get("fetched_date", "")):
-            # Skip if already summarized or has an error
-            if video_entry.get("summarized_date") or video_entry.get("error"):
+            # Skip if has an error
+            if video_entry.get("error"):
                 continue
 
             # Skip if not successfully fetched
             if not video_entry.get("fetched_date"):
                 continue
 
-            # Build episode directory and check for transcript
-            # Create a temporary VideoEntry to get the slug
-            from .watcher import VideoEntry
+            # Build episode directory and check for transcript/summary
             temp_entry = VideoEntry(
                 id=video_entry["video_id"],
                 title=video_entry["title"],
@@ -143,9 +142,20 @@ def summarize_episodes(channel):
             transcript_path = episode_dir / "transcript.txt"
             summary_path = episode_dir / "summary.md"
 
-            if not transcript_path.exists() or summary_path.exists():
+            if not transcript_path.exists():
                 continue
 
+            # If summary exists but summarized_date is not set, update it
+            if summary_path.exists() and not video_entry.get("summarized_date"):
+                video_entry["summarized_date"] = datetime.now(tz=timezone.utc).isoformat()
+                updated += 1
+                continue
+
+            # Skip if already summarized
+            if video_entry.get("summarized_date"):
+                continue
+
+            # Generate new summary
             click.echo(f"  -> {video_entry['title']}")
 
             try:
@@ -168,7 +178,7 @@ def summarize_episodes(channel):
 
         # Save updated state
         channel_json.write_text(json.dumps(state, indent=2))
-        click.echo(f"  Summarized {count} episode(s)")
+        click.echo(f"  Summarized {count} episode(s), updated {updated} existing")
 
 
 @cli.command()
