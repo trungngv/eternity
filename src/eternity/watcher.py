@@ -76,7 +76,23 @@ def list_channel_videos(channel_url: str) -> list[VideoEntry]:
 def find_new_episodes(channel, channel_dir: Path) -> list[VideoEntry]:
     episodes_dir = channel_dir / "episodes"
     episodes_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Build set of already-fetched video IDs (check all episode.json files)
+    fetched_ids = set()
+    for episode_dir in episodes_dir.iterdir():
+        if not episode_dir.is_dir():
+            continue
+        metadata_path = episode_dir / "episode.json"
+        if metadata_path.exists():
+            try:
+                import json
+                metadata = json.loads(metadata_path.read_text())
+                fetched_ids.add(metadata["video_id"])
+            except (json.JSONDecodeError, KeyError):
+                pass
+    
     all_videos = list_channel_videos(channel.url)
     filtered = [v for v in all_videos if _passes_filters(v, channel.filters)]
-    unprocessed = [v for v in filtered if not _is_processed(v, episodes_dir)]
+    # Skip videos we've already fetched (check by video ID)
+    unprocessed = [v for v in filtered if v.id not in fetched_ids]
     return unprocessed[: channel.filters.max_episodes_per_run]
