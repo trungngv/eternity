@@ -1,0 +1,6 @@
+- ✅ Fetch should check for new episodes. Summarise should be a separate step so that it can process old videos.
+  - Commands: `uv run eternity fetch` (check + download transcripts), `uv run eternity summarize-episodes` (create summaries)
+  - Metadata stored in `episode.json` so summarize can work independently
+  - Can now run fetch frequently and summarize on different schedule
+- master lessons should be in diff format, otherwise it will grow too long.
+- master lesson should be by topics, otherwise it will grow too long?
