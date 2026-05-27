@@ -9,7 +9,7 @@ class ChannelFilters:
     max_duration_minutes: int = 300
     exclude_title_keywords: list[str] = field(default_factory=list)
     backfill_days: int = 30
-    max_episodes_per_run: int = 5
+    max_episodes_per_run: int = 10
     max_transcript_tokens: int = 50000
 
 

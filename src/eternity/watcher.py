@@ -90,5 +90,4 @@ def find_new_episodes(channel, channel_dir: Path) -> list[VideoEntry]:
     all_videos = list_channel_videos(channel.url)
     filtered = [v for v in all_videos if _passes_filters(v, channel.filters)]
     # Skip videos we've already fetched
-    unprocessed = [v for v in filtered if v.id not in fetched_ids]
-    return unprocessed[: channel.filters.max_episodes_per_run]
+    return [v for v in filtered if v.id not in fetched_ids]

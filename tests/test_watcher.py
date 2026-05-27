@@ -35,7 +35,7 @@ def default_filters(**overrides) -> ChannelFilters:
         max_duration_minutes=180,
         exclude_title_keywords=["trailer", "clip"],
         backfill_days=90,
-        max_episodes_per_run=5,
+        max_episodes_per_run=10,
         max_transcript_tokens=50000,
         **overrides,
     )

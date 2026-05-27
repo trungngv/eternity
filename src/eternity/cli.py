@@ -172,6 +172,8 @@ def summarize_episodes(channel):
                 video_entry["summarized_date"] = datetime.now(tz=timezone.utc).isoformat()
                 click.echo("    Done")
                 count += 1
+                if count >= ch.filters.max_episodes_per_run:
+                    break
             except Exception as e:
                 click.echo(f"    Error: {e}", err=True)
                 video_entry["error"] = str(e)
