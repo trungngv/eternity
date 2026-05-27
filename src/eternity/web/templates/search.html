@@ -10,8 +10,8 @@
 <p class="meta">Results for "{{ query }}":</p>
 {% if results %}
 <ul>
-  {% for path in results %}
-  <li>{{ path }}</li>
+  {% for result in results %}
+  <li><a href="{{ result.url }}">{{ result.display }}</a></li>
   {% endfor %}
 </ul>
 {% else %}

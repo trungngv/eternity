@@ -120,7 +120,7 @@ def summarize_episodes(channel):
         count = 0
         updated = 0
 
-        for video_entry in sorted(videos, key=lambda v: v.get("fetched_date", "")):
+        for video_entry in sorted(videos, key=lambda v: v.get("fetched_date") or ""):
             # Skip if has an error
             if video_entry.get("error"):
                 continue

@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-05-26T11:54:36.330356+00:00",
+  "last_checked": "2026-05-27T10:11:06.977520+00:00",
   "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
@@ -94,7 +94,7 @@
       "title": "Harvey CEO: How a 31-year-old Runs an $11B Company",
       "url": "https://youtube.com/watch?v=j6jgpb8kCR0",
       "fetched_date": "2026-05-25T00:00:00+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:28:32.732946+00:00",
       "error": null
     },
     {
@@ -102,7 +102,7 @@
       "title": "Stop Wasting Time - Here's How to Think Big | Mario Harik",
       "url": "https://youtube.com/watch?v=XCO7mqK7hs0",
       "fetched_date": "2026-05-25T00:00:00+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:29:06.986224+00:00",
       "error": null
     },
     {
@@ -110,7 +110,7 @@
       "title": "Lessons from Building Panera, CAVA, and Au Bon Pain | Ron Shaich",
       "url": "https://youtube.com/watch?v=h1fIVmf7uaw",
       "fetched_date": "2026-05-25T00:00:00+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:29:36.126988+00:00",
       "error": null
     },
     {
@@ -118,7 +118,7 @@
       "title": "Investing in What Stays the Same | Connor Teskey",
       "url": "https://youtube.com/watch?v=xSwHXjH8Og4",
       "fetched_date": "2026-05-25T00:00:00+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:30:19.557672+00:00",
       "error": null
     },
     {
@@ -126,7 +126,7 @@
       "title": "Tracy Britt Cool: On Working for Warren Buffett and Building Great Businesses",
       "url": "https://youtube.com/watch?v=kGnBwjOzuSQ",
       "fetched_date": "2026-05-26T11:54:26.516083+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:30:52.293598+00:00",
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "title": "The Man Who Said No to Rupert Murdoch: Barry Diller on Power, Media, and Getting Rich at 80",
       "url": "https://youtube.com/watch?v=zyw1HVOqpCQ",
       "fetched_date": "2026-05-26T11:54:28.806354+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:31:21.939769+00:00",
       "error": null
     },
     {
@@ -142,7 +142,7 @@
       "title": "How to Build a Powerful Cult",
       "url": "https://youtube.com/watch?v=I9Njb8Lw5Xc",
       "fetched_date": "2026-05-26T11:54:31.094156+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:31:45.252129+00:00",
       "error": null
     },
     {
@@ -150,7 +150,7 @@
       "title": "Why Everyone Is Wrong About AI (Including You) | Benedict Evans",
       "url": "https://youtube.com/watch?v=2NgdQf2GzJg",
       "fetched_date": "2026-05-26T11:54:34.056659+00:00",
-      "summarized_date": null,
+      "summarized_date": "2026-05-26T22:32:15.883613+00:00",
       "error": null
     },
     {
@@ -158,6 +158,598 @@
       "title": "Ryan Petersen: Building Flexport into a $3B Logistics Giant",
       "url": "https://youtube.com/watch?v=zaNPnEZGhvA",
       "fetched_date": "2026-05-26T11:54:36.330296+00:00",
+      "summarized_date": "2026-05-26T22:32:43.620454+00:00",
+      "error": null
+    },
+    {
+      "video_id": "PUniIxDq5WA",
+      "title": "The President of Shopify on AI, Scaling, & High Agency | Harley Finkelstein",
+      "url": "https://youtube.com/watch?v=PUniIxDq5WA",
+      "fetched_date": "2026-05-26T22:57:11.849404+00:00",
+      "summarized_date": "2026-05-27T10:13:03.618782+00:00",
+      "error": null
+    },
+    {
+      "video_id": "E50ix2Y62y4",
+      "title": "Former Pepsi CEO: The Hidden Cost of Rising to the Top | Indra Nooyi",
+      "url": "https://youtube.com/watch?v=E50ix2Y62y4",
+      "fetched_date": "2026-05-26T22:57:13.799216+00:00",
+      "summarized_date": "2026-05-27T10:13:03.618928+00:00",
+      "error": null
+    },
+    {
+      "video_id": "pV7pvxapVRA",
+      "title": "Reed Hastings: How Netflix Built a Culture That Fires Good People",
+      "url": "https://youtube.com/watch?v=pV7pvxapVRA",
+      "fetched_date": "2026-05-26T22:57:15.719668+00:00",
+      "summarized_date": "2026-05-27T10:13:03.618953+00:00",
+      "error": null
+    },
+    {
+      "video_id": "HHQsrLPUXKs",
+      "title": "How Belichick Actually Makes Decisions (It\u2019s Not What You Think)",
+      "url": "https://youtube.com/watch?v=HHQsrLPUXKs",
+      "fetched_date": "2026-05-26T22:57:17.511472+00:00",
+      "summarized_date": "2026-05-27T10:13:03.618981+00:00",
+      "error": null
+    },
+    {
+      "video_id": "hS-xso4Nmo4",
+      "title": "My conversation with Pierre Poilievre",
+      "url": "https://youtube.com/watch?v=hS-xso4Nmo4",
+      "fetched_date": "2026-05-26T22:57:19.390826+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619000+00:00",
+      "error": null
+    },
+    {
+      "video_id": "VmcYu_kd7_0",
+      "title": "Lessons from a lifetime of investing and outperforming | Bruce Flatt",
+      "url": "https://youtube.com/watch?v=VmcYu_kd7_0",
+      "fetched_date": "2026-05-26T22:57:35.215696+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619021+00:00",
+      "error": null
+    },
+    {
+      "video_id": "q9CWf-y3vBo",
+      "title": "Top Dating Expert: Only 1% of Daters Do this",
+      "url": "https://youtube.com/watch?v=q9CWf-y3vBo",
+      "fetched_date": "2026-05-26T22:57:37.343033+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619043+00:00",
+      "error": null
+    },
+    {
+      "video_id": "uHT57nhzgUI",
+      "title": "The Venture Capitalist Who Bets on Science Most Investors Think Is Impossible | Josh Wolfe",
+      "url": "https://youtube.com/watch?v=uHT57nhzgUI",
+      "fetched_date": "2026-05-26T22:57:39.293897+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619065+00:00",
+      "error": null
+    },
+    {
+      "video_id": "5-aosSQveS4",
+      "title": "A $2 Product. $250M Revenue. One Owner.",
+      "url": "https://youtube.com/watch?v=5-aosSQveS4",
+      "fetched_date": "2026-05-26T22:57:41.367318+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619085+00:00",
+      "error": null
+    },
+    {
+      "video_id": "O6LojBechFk",
+      "title": "The Man Who Built Gap, J.Crew, and Old Navy Explains How He Spots Winners | Mickey Drexler",
+      "url": "https://youtube.com/watch?v=O6LojBechFk",
+      "fetched_date": "2026-05-26T22:57:43.039964+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619106+00:00",
+      "error": null
+    },
+    {
+      "video_id": "91WKEsbHUNc",
+      "title": "Sequoia VC Reveals: The One Trait That Built Airbnb, DoorDash & Zappos",
+      "url": "https://youtube.com/watch?v=91WKEsbHUNc",
+      "fetched_date": "2026-05-26T22:57:50.854652+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619126+00:00",
+      "error": null
+    },
+    {
+      "video_id": "mQ-Z4_r3IzQ",
+      "title": "Adam Karr: Know Yourself, Pick Your Game, Build Your Blueprint (Lessons from a Janitor & Investing)",
+      "url": "https://youtube.com/watch?v=mQ-Z4_r3IzQ",
+      "fetched_date": "2026-05-26T22:57:52.814281+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619148+00:00",
+      "error": null
+    },
+    {
+      "video_id": "49Xnp6QBNts",
+      "title": "John Mackey: What I Got Right and Wrong Building Whole Foods",
+      "url": "https://youtube.com/watch?v=49Xnp6QBNts",
+      "fetched_date": "2026-05-26T22:57:55.020420+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619167+00:00",
+      "error": null
+    },
+    {
+      "video_id": "Irbt1eM5Olk",
+      "title": "He Left Professional Sports to Build a Sock Company. Now It Does $30M+ | Rob Fraser",
+      "url": "https://youtube.com/watch?v=Irbt1eM5Olk",
+      "fetched_date": "2026-05-26T22:57:57.130262+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619189+00:00",
+      "error": null
+    },
+    {
+      "video_id": "iSGkxcEL_lM",
+      "title": "84-Year-Old Billionaire: How I Turned a Small Blueberry Business into a Global Empire | John Bragg",
+      "url": "https://youtube.com/watch?v=iSGkxcEL_lM",
+      "fetched_date": "2026-05-26T22:57:58.938149+00:00",
+      "summarized_date": "2026-05-27T10:13:03.619208+00:00",
+      "error": null
+    },
+    {
+      "video_id": "bZDiwANRS84",
+      "title": "How to Become a Master Storyteller (and IMPOSSIBLE to Ignore)",
+      "url": "https://youtube.com/watch?v=bZDiwANRS84",
+      "fetched_date": "2026-05-26T22:58:04.227580+00:00",
+      "summarized_date": "2026-05-27T10:13:56.698646+00:00",
+      "error": null
+    },
+    {
+      "video_id": "h19TEWB2lNg",
+      "title": "How Brent Beshore Transformed 15 Companies Through Self Mastery",
+      "url": "https://youtube.com/watch?v=h19TEWB2lNg",
+      "fetched_date": "2026-05-26T22:58:06.309656+00:00",
+      "summarized_date": "2026-05-27T10:14:23.743142+00:00",
+      "error": null
+    },
+    {
+      "video_id": "zEx_IGVfi7Y",
+      "title": "Morgan Housel: What You Need to Master (And Avoid) to Get Rich, Stay Rich, and Build Wealth",
+      "url": "https://youtube.com/watch?v=zEx_IGVfi7Y",
+      "fetched_date": "2026-05-26T22:58:08.364928+00:00",
+      "summarized_date": "2026-05-27T10:15:05.523220+00:00",
+      "error": null
+    },
+    {
+      "video_id": "e0CF7-hhtl0",
+      "title": "No. 1 Performance Coach: What the Best in the World Know About Success",
+      "url": "https://youtube.com/watch?v=e0CF7-hhtl0",
+      "fetched_date": "2026-05-26T22:58:10.789153+00:00",
+      "summarized_date": "2026-05-27T10:15:31.326098+00:00",
+      "error": null
+    },
+    {
+      "video_id": "AvzQCDkuIEw",
+      "title": "David Segal: Building David's Tea",
+      "url": "https://youtube.com/watch?v=AvzQCDkuIEw",
+      "fetched_date": "2026-05-26T22:58:12.845537+00:00",
+      "summarized_date": "2026-05-27T10:15:55.061784+00:00",
+      "error": null
+    },
+    {
+      "video_id": "JNB3xRLnMTg",
+      "title": "Dr. Rhonda Patrick: The Diet Essentials Your Body Shouldn't Live Without (But Probably Is!)",
+      "url": "https://youtube.com/watch?v=JNB3xRLnMTg",
+      "fetched_date": "2026-05-26T22:58:20.102554+00:00",
+      "summarized_date": "2026-05-27T10:16:27.629046+00:00",
+      "error": null
+    },
+    {
+      "video_id": "gX-n8I2PAdY",
+      "title": "Seth Godin: \"Failure is Learning on Your Way to Mastery\" and Other Advice for Creativity",
+      "url": "https://youtube.com/watch?v=gX-n8I2PAdY",
+      "fetched_date": "2026-05-26T22:58:22.139468+00:00",
+      "summarized_date": "2026-05-27T10:17:05.742345+00:00",
+      "error": null
+    },
+    {
+      "video_id": "U-FlqVzbj0s",
+      "title": "The Relentless Obsession of Brad Jacobs",
+      "url": "https://youtube.com/watch?v=U-FlqVzbj0s",
+      "fetched_date": "2026-05-26T22:58:24.086659+00:00",
+      "summarized_date": "2026-05-27T10:18:05.328707+00:00",
+      "error": null
+    },
+    {
+      "video_id": "o6rgXYt7BnE",
+      "title": "Christopher Davis: Timeless Investment Wisdom (Audio)",
+      "url": "https://youtube.com/watch?v=o6rgXYt7BnE",
+      "fetched_date": "2026-05-26T22:58:26.081292+00:00",
+      "summarized_date": "2026-05-27T10:18:40.361974+00:00",
+      "error": null
+    },
+    {
+      "video_id": "vM_1G1LCotU",
+      "title": "The Marketing Expert: Sell Anything with this Trick | April Dunford",
+      "url": "https://youtube.com/watch?v=vM_1G1LCotU",
+      "fetched_date": "2026-05-26T22:58:27.884771+00:00",
+      "summarized_date": "2026-05-27T10:19:09.767717+00:00",
+      "error": null
+    },
+    {
+      "video_id": "xpvOhgoKrg4",
+      "title": "Bryan Johnson: The Five Science-Backed Habits For Longer Living",
+      "url": "https://youtube.com/watch?v=xpvOhgoKrg4",
+      "fetched_date": "2026-05-26T22:58:34.317423+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "_TREQI5G7v0",
+      "title": "Dr. Becky Kennedy: The Parenting Secrets That Will Make Your Kids Love You When They're 14 and 40",
+      "url": "https://youtube.com/watch?v=_TREQI5G7v0",
+      "fetched_date": "2026-05-26T22:58:36.225782+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "vRXW9FUxfjU",
+      "title": "Tom Gayner: Lessons That Every Investor Needs to Learn (Audio)",
+      "url": "https://youtube.com/watch?v=vRXW9FUxfjU",
+      "fetched_date": "2026-05-26T22:58:38.132050+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "YrMiKxPV_Ig",
+      "title": "The Non-Verbal Expert: These Behaviors Tell You Everything You Need to Know About Someone",
+      "url": "https://youtube.com/watch?v=YrMiKxPV_Ig",
+      "fetched_date": "2026-05-26T22:58:40.002139+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "9tEcdIIb5_o",
+      "title": "The Art of Failure: The Unexpected Path to Success (Audio)",
+      "url": "https://youtube.com/watch?v=9tEcdIIb5_o",
+      "fetched_date": "2026-05-26T22:58:41.672710+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "q6f0rtpXPiM",
+      "title": "Beyond Luck: The 5 Sources of Advantage You Need to Win (Audio)",
+      "url": "https://youtube.com/watch?v=q6f0rtpXPiM",
+      "fetched_date": "2026-05-27T10:08:12.219592+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "E8kuQdZgNn8",
+      "title": "Jerry Colonna: How to Reboot Yourself",
+      "url": "https://youtube.com/watch?v=E8kuQdZgNn8",
+      "fetched_date": "2026-05-27T10:08:14.666484+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "fv5Bozsj2xM",
+      "title": "Frank Slootman on Focus, Performance, Bureaucracy, & Success | The Knowledge Project Podcast 173",
+      "url": "https://youtube.com/watch?v=fv5Bozsj2xM",
+      "fetched_date": "2026-05-27T10:08:17.044217+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "iTGZg6GYc0Y",
+      "title": "Dr. Julie Gurner: Standards, Rules, and Curating Friendships",
+      "url": "https://youtube.com/watch?v=iTGZg6GYc0Y",
+      "fetched_date": "2026-05-27T10:08:19.210410+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "C5D6HAskUaE",
+      "title": "Dr. Julie Gurner: How to Reach Your Potential",
+      "url": "https://youtube.com/watch?v=C5D6HAskUaE",
+      "fetched_date": "2026-05-27T10:08:21.579043+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "TqQzgmLqK2I",
+      "title": "Position Yourself for Success | Adam Robinson | Knowledge Project Podcast 168",
+      "url": "https://youtube.com/watch?v=TqQzgmLqK2I",
+      "fetched_date": "2026-05-27T10:08:23.618532+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "lsidKYeuQFw",
+      "title": "The Man Who Proved Speed Kills Slow Companies | George Stalk Jr.",
+      "url": "https://youtube.com/watch?v=lsidKYeuQFw",
+      "fetched_date": "2026-05-27T10:08:26.379241+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "gXJAnh-iSTc",
+      "title": "Ravi Gupta (Sequoia) Opens Up About The Realities of Success | E164",
+      "url": "https://youtube.com/watch?v=gXJAnh-iSTc",
+      "fetched_date": "2026-05-27T10:08:28.851032+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "pi7iclNf24I",
+      "title": "A Technologist's Guide to the Future | Nathan Myhrvold | Knowledge Project Podcast",
+      "url": "https://youtube.com/watch?v=pi7iclNf24I",
+      "fetched_date": "2026-05-27T10:08:31.120033+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "BlMNMPZVWb4",
+      "title": "Take Charge of Your Life: The Routine that Changed Everything with Jim Dethmer",
+      "url": "https://youtube.com/watch?v=BlMNMPZVWb4",
+      "fetched_date": "2026-05-27T10:08:33.801880+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "bTyyY4jrl2w",
+      "title": "A Practical Guide to Controlling Addiction & Dopamine | Dr. Anna Lembke | Knowledge Project 159",
+      "url": "https://youtube.com/watch?v=bTyyY4jrl2w",
+      "fetched_date": "2026-05-27T10:08:36.017809+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "TNyaaUF0hwE",
+      "title": "Simple Things You Can Do to Become a Better Listener | Carolyn Coughlin | Knowledge Project Podcast",
+      "url": "https://youtube.com/watch?v=TNyaaUF0hwE",
+      "fetched_date": "2026-05-27T10:08:48.528583+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "D9ayv-y4XBo",
+      "title": "A Practical Guide on Finding Inner Peace | Jack Kornfield | Knowledge Project Podcast 156",
+      "url": "https://youtube.com/watch?v=D9ayv-y4XBo",
+      "fetched_date": "2026-05-27T10:08:50.703466+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "bYAe0zXt8xg",
+      "title": "The Science of Setting and Achieving Goals | Emily Balcetis | Knowledge Project Podcast",
+      "url": "https://youtube.com/watch?v=bYAe0zXt8xg",
+      "fetched_date": "2026-05-27T10:08:53.194173+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "DSMIzfDyxZI",
+      "title": "Tyler Cowen: Prepare for the Brave New World | Knowledge Project Podcast (Audio)",
+      "url": "https://youtube.com/watch?v=DSMIzfDyxZI",
+      "fetched_date": "2026-05-27T10:08:55.493669+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "hUug8tEWtoY",
+      "title": "Tobi L\u00fctke: Empowering a World of Rebels |  Knowledge Project Podcast",
+      "url": "https://youtube.com/watch?v=hUug8tEWtoY",
+      "fetched_date": "2026-05-27T10:08:58.217702+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "7BfKEkEkKlk",
+      "title": "Rules for Winning the Game of Life | Adam Robinson | Knowledge Project Podcast 47",
+      "url": "https://youtube.com/watch?v=7BfKEkEkKlk",
+      "fetched_date": "2026-05-27T10:09:00.870238+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "2tOWvdWSZzk",
+      "title": "Principles for Successful Teamwork | Alan Mulally | Knowledge Project Podcast 151",
+      "url": "https://youtube.com/watch?v=2tOWvdWSZzk",
+      "fetched_date": "2026-05-27T10:09:03.300363+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "hwqveKLfpfg",
+      "title": "Robert Greene on Reading, The Laws of Power, and Detecting Lies | Knowledge Project Podcast Archive",
+      "url": "https://youtube.com/watch?v=hwqveKLfpfg",
+      "fetched_date": "2026-05-27T10:09:05.579376+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "pl2_6KP2HpY",
+      "title": "Ray Dalio: Principles for a Life Well Lived | Knowledge Project Podcast Archive",
+      "url": "https://youtube.com/watch?v=pl2_6KP2HpY",
+      "fetched_date": "2026-05-27T10:09:08.395888+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "8MuNDps3m6A",
+      "title": "Patrick Collison: Philosophies for Running Stripe, Hiring, Decision Making, and Reading",
+      "url": "https://youtube.com/watch?v=8MuNDps3m6A",
+      "fetched_date": "2026-05-27T10:09:11.153878+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "UbXIugEQQsI",
+      "title": "Insights for Making Better Decisions | Gary Klein | Knowledge Project 144",
+      "url": "https://youtube.com/watch?v=UbXIugEQQsI",
+      "fetched_date": "2026-05-27T10:09:13.841478+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "LFhyL4pqqc8",
+      "title": "Lessons from a Life of Leadership | Marshall Goldsmith | Knowledge Project 142",
+      "url": "https://youtube.com/watch?v=LFhyL4pqqc8",
+      "fetched_date": "2026-05-27T10:09:16.627099+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "dXHbToq1SDU",
+      "title": "Balaji - This country will win the future (and how they'll do it)",
+      "url": "https://youtube.com/watch?v=dXHbToq1SDU",
+      "fetched_date": "2026-05-27T10:09:18.556807+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "nl1PIagzgUo",
+      "title": "Core Human Motivations | Kunal Shah | Knowledge Project 141",
+      "url": "https://youtube.com/watch?v=nl1PIagzgUo",
+      "fetched_date": "2026-05-27T10:09:21.060447+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "RRdTfh1_88I",
+      "title": "David Sinclair: Revealing the Biggest Myths About Diet, Stress, and Death",
+      "url": "https://youtube.com/watch?v=RRdTfh1_88I",
+      "fetched_date": "2026-05-27T10:09:23.434714+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "F_WmxUXbKZc",
+      "title": "Andrew Huberman: Don't Drink Coffee Right Away...(Do This Instead) And More Ways to Live Better",
+      "url": "https://youtube.com/watch?v=F_WmxUXbKZc",
+      "fetched_date": "2026-05-27T10:09:26.000747+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "-qVVcDi3s9c",
+      "title": "A Masterclass on Leadership | Stanley McChrystal | Knowledge Project 132",
+      "url": "https://youtube.com/watch?v=-qVVcDi3s9c",
+      "fetched_date": "2026-05-27T10:09:28.489314+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "1n2rXx-IOyE",
+      "title": "Inside the Mind of A Famous Investor | Marc Andreessen",
+      "url": "https://youtube.com/watch?v=1n2rXx-IOyE",
+      "fetched_date": "2026-05-27T10:09:30.969809+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "lSIErua5q04",
+      "title": "William Irvine: Living a Stoic Life | The Knowledge Project #123",
+      "url": "https://youtube.com/watch?v=lSIErua5q04",
+      "fetched_date": "2026-05-27T10:09:33.140159+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "aO4RC70qU1U",
+      "title": "The Influence Expert: 7 Ways to Get People to Do What You Want (Even When They Don't Want To)",
+      "url": "https://youtube.com/watch?v=aO4RC70qU1U",
+      "fetched_date": "2026-05-27T10:09:35.269046+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "DkAV3UvcNUI",
+      "title": "What You Can Learn From History's Greatest Innovators | Walter Isaacson | The Knowledge Project 121",
+      "url": "https://youtube.com/watch?v=DkAV3UvcNUI",
+      "fetched_date": "2026-05-27T10:09:39.360124+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "8ZiLLjtAtyU",
+      "title": "What makes a GREAT INVESTOR? | Episode 111 Joel Greenblatt",
+      "url": "https://youtube.com/watch?v=8ZiLLjtAtyU",
+      "fetched_date": "2026-05-27T10:09:41.546691+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "-Dot-Uf1dkE",
+      "title": "How to Decide When You Don't Have All the Facts  | Good to Great Author Jim Collins (Audio)",
+      "url": "https://youtube.com/watch?v=-Dot-Uf1dkE",
+      "fetched_date": "2026-05-27T10:09:44.288468+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "r6NUO_bymuA",
+      "title": "Semiconductors: Everything You Wanted to Know",
+      "url": "https://youtube.com/watch?v=r6NUO_bymuA",
+      "fetched_date": null,
+      "summarized_date": null,
+      "error": "\u001b[0;31mERROR:\u001b[0m Unable to download video subtitles for 'en': HTTP Error 429: Too Many Requests"
+    },
+    {
+      "video_id": "b_norXr5dR0",
+      "title": "The Essence of Leadership with Randall Stutman | The Knowledge Project #95",
+      "url": "https://youtube.com/watch?v=b_norXr5dR0",
+      "fetched_date": "2026-05-27T10:09:48.889767+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "v9pipH75L_E",
+      "title": "Chamath Palihapitiya: Freedom, Bitcoin, and First Principles | The Knowledge Project #94",
+      "url": "https://youtube.com/watch?v=v9pipH75L_E",
+      "fetched_date": "2026-05-27T10:09:51.514871+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "mIS3LYxgVWc",
+      "title": "Bill Ackman: Dealing with Haters, My Largest Trade Ever, and Sounding the Alarm for the Government",
+      "url": "https://youtube.com/watch?v=mIS3LYxgVWc",
+      "fetched_date": "2026-05-27T10:09:53.763163+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "atXKntdX2UY",
+      "title": "Secrets to Healthy Relationships | Esther Perel | The Knowledge Project #71",
+      "url": "https://youtube.com/watch?v=atXKntdX2UY",
+      "fetched_date": "2026-05-27T10:10:06.350882+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "yHjUApypNsU",
+      "title": "The Negotiating MASTERCLASS | Chris Voss and Shane Parrish",
+      "url": "https://youtube.com/watch?v=yHjUApypNsU",
+      "fetched_date": "2026-05-27T10:10:08.743344+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "-10cairWi10",
+      "title": "Daniel Kahneman | The Knowledge Project #68",
+      "url": "https://youtube.com/watch?v=-10cairWi10",
+      "fetched_date": "2026-05-27T10:10:11.368480+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "7xIrgD6NxHI",
+      "title": "Jim Collins \u2014 Good to Great \u2014 The Knowledge Project #67",
+      "url": "https://youtube.com/watch?v=7xIrgD6NxHI",
+      "fetched_date": "2026-05-27T10:10:13.838046+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "jZMbKvJqEVo",
+      "title": "Howard Marks | The Knowledge Project #53",
+      "url": "https://youtube.com/watch?v=jZMbKvJqEVo",
+      "fetched_date": "2026-05-27T10:10:16.238726+00:00",
+      "summarized_date": null,
+      "error": null
+    },
+    {
+      "video_id": "mGY2To_HW98",
+      "title": "The Angel Philosopher Naval Ravikant on Reading, Making Decisions, Habits, and the Purpose of Life",
+      "url": "https://youtube.com/watch?v=mGY2To_HW98",
+      "fetched_date": "2026-05-27T10:10:18.637329+00:00",
       "summarized_date": null,
       "error": null
     }

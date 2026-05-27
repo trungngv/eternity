@@ -54,7 +54,7 @@ async def channel(request: Request, channel_id: str):
     episodes_dir = KNOWLEDGE_DIR / "channels" / channel_id / "episodes"
     episodes = []
     if episodes_dir.exists():
-        episodes = [d.name for d in sorted(episodes_dir.iterdir(), reverse=True) if d.is_dir()]
+        episodes = [d.name for d in sorted(episodes_dir.iterdir(), reverse=True) if d.is_dir() and (d / "summary.md").exists()]
     return templates.TemplateResponse(request, "channel.html", {
         "channel_id": channel_id,
         "episodes": episodes,
@@ -111,13 +111,39 @@ async def search(request: Request, q: str = ""):
     results = []
     if q and KNOWLEDGE_DIR.exists():
         proc = subprocess.run(
-            ["grep", "-rilF", "--", q, str(KNOWLEDGE_DIR)],
+            ["find", str(KNOWLEDGE_DIR), "-name", "*.md", "-type", "f", "-exec", "grep", "-l", "-F", q, "{}", "+"],
             capture_output=True, text=True, timeout=10,
         )
         for line in proc.stdout.strip().splitlines():
             try:
-                results.append(Path(line).relative_to(KNOWLEDGE_DIR))
-            except ValueError:
+                rel_path = Path(line).relative_to(KNOWLEDGE_DIR)
+                parts = rel_path.parts
+                
+                # Convert file path to a browsable URL
+                if parts[0] == "channels" and len(parts) >= 4 and parts[2] == "episodes":
+                    # channels/{channel_id}/episodes/{slug}/summary.md -> /channels/{channel_id}/episodes/{slug}
+                    channel_id = parts[1]
+                    slug = parts[3]
+                    url = f"/channels/{channel_id}/episodes/{slug}"
+                    display = f"{slug} ({channel_id})"
+                elif parts[0] == "topics" and len(parts) == 2:
+                    # topics/{slug}.md -> /topics/{slug}
+                    slug = parts[1].replace(".md", "")
+                    url = f"/topics/{slug}"
+                    display = f"Topic: {slug}"
+                elif parts[0] == "synthesis" and len(parts) == 2:
+                    # synthesis/{week}.md -> /synthesis/{week}
+                    week = parts[1].replace(".md", "")
+                    url = f"/synthesis/{week}"
+                    display = f"Synthesis: {week}"
+                elif parts[0] == "master_lessons.md":
+                    url = "/lessons"
+                    display = "Master Lessons"
+                else:
+                    continue
+                
+                results.append({"display": display, "url": url})
+            except (ValueError, IndexError):
                 pass
     return templates.TemplateResponse(request, "search.html", {
         "query": q,
