@@ -193,6 +193,41 @@ def synthesize():
 
 
 @cli.command()
+@click.option("--out", default="docs", show_default=True, help="Output directory for static HTML")
+def build(out):
+    """Render the knowledge base to static HTML."""
+    from .web.build import build as _build
+    out_dir = Path(out)
+    click.echo(f"Building static site → {out_dir}/")
+    _build(KNOWLEDGE_PATH, out_dir)
+    click.echo("Done.")
+
+
+@cli.command()
+@click.option("--message", default=None, help="Git commit message (default: auto)")
+def publish(message):
+    """Build static site and push docs/ to GitHub Pages."""
+    import subprocess as sp
+    from .web.build import build as _build
+    from datetime import datetime, timezone
+
+    out_dir = Path("docs")
+    click.echo("Building static site...")
+    _build(KNOWLEDGE_PATH, out_dir)
+
+    commit_msg = message or f"Update site {datetime.now(tz=timezone.utc).strftime('%Y-%m-%d %H:%M')} UTC"
+    click.echo(f"Committing: {commit_msg}")
+    sp.run(["git", "add", "docs/"], check=True)
+    result = sp.run(["git", "diff", "--cached", "--quiet"])
+    if result.returncode == 0:
+        click.echo("Nothing to commit.")
+        return
+    sp.run(["git", "commit", "-m", commit_msg], check=True)
+    sp.run(["git", "push"], check=True)
+    click.echo("Pushed to GitHub.")
+
+
+@cli.command()
 @click.option("--host", default="127.0.0.1", show_default=True)
 @click.option("--port", default=8000, show_default=True)
 def serve(host, port):
