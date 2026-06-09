@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Synthesis — Eternity{% endblock %}
+{% block content %}
+{% if weeks %}
+<h1>Weekly Synthesis</h1>
+<ul>
+  {% for week in weeks %}
+  <li><a href="/synthesis/{{ week }}">{{ week }}</a></li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="meta"><a href="/synthesis">← All weeks</a></p>
+{{ content | safe }}
+{% endif %}
+{% endblock %}

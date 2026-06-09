@@ -1,0 +1,12 @@
+channels:
+  - id: tkk_podcast
+    name: The Knowledge Project Podcast
+    url: https://www.youtube.com/@tkppodcast/videos
+    check_frequency: daily
+    filters:
+      min_duration_minutes: 20
+      max_duration_minutes: 180
+      exclude_title_keywords: ["trailer", "clip", "highlight", "short"]
+      backfill_days: 90
+      max_episodes_per_run: 10
+      max_transcript_tokens: 50000
