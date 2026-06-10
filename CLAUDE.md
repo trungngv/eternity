@@ -2,11 +2,11 @@
 
 ## Project Overview
 
-**Eternity** watches YouTube channels, downloads transcripts, generates structured lesson summaries via Claude, synthesizes them into a living knowledge base weekly, and serves it as a local web app.
+**Eternity** watches YouTube channels, downloads transcripts, generates structured lesson summaries via Claude, synthesizes them into a living knowledge base weekly, and publishes it as a static site via GitHub Pages.
 
-**Pipeline:** `watcher → fetcher → summarizer → synthesizer`
+**Pipeline:** `watcher → fetcher → summarizer → synthesizer → build`
 
-**Stack:** Python 3.12+, uv, yt-dlp, youtube-transcript-api, click, fastapi, uvicorn, mistune, jinja2, pyyaml. No `anthropic` SDK — AI calls use the `claude` CLI directly.
+**Stack:** Python 3.12+, uv, yt-dlp, youtube-transcript-api, click, mistune, pyyaml. No `anthropic` SDK — AI calls use the `claude` CLI directly.
 
 ---
 
@@ -19,7 +19,8 @@ uv run eternity fetch --channel tkk_podcast    # single channel
 uv run eternity summarize-episodes             # generate lesson summaries
 uv run eternity summarize-episodes --channel tkk_podcast
 uv run eternity synthesize                     # weekly KB consolidation
-uv run eternity serve                          # web app at http://localhost:8000
+uv run eternity build                          # generate static site → docs/
+uv run eternity publish                        # build + git commit docs/ + push
 ```
 
 ---
@@ -34,8 +35,8 @@ uv run eternity serve                          # web app at http://localhost:800
 | `src/eternity/fetcher.py` | Downloads transcript via yt-dlp (VTT), falls back to youtube-transcript-api |
 | `src/eternity/summarizer.py` | Calls `claude` CLI → JSON lessons → writes `summary.md` |
 | `src/eternity/synthesizer.py` | Calls `claude` CLI → updates `master_lessons.md`, topic files, synthesis log |
-| `src/eternity/cli.py` | Click CLI: `process`, `synthesize`, `serve` |
-| `src/eternity/web/app.py` | FastAPI: serves `knowledge/` as HTML |
+| `src/eternity/cli.py` | Click CLI: `fetch`, `summarize-episodes`, `synthesize`, `build`, `publish` |
+| `src/eternity/build.py` | Static site generator: reads `knowledge/`, writes `docs/` organized by summary date |
 
 ---
 
@@ -52,6 +53,10 @@ knowledge/
   synthesis/{YYYY-WNN}.md
   master_lessons.md
 config/channels.yaml
+docs/                          # generated static site (committed, served by GitHub Pages)
+  index.html                   # dates list (newest first)
+  {YYYY-MM-DD}/index.html      # episodes grouped by channel, expandable via <details>
+  .nojekyll
 ```
 
 **Deduplication:** Videos tracked by `video_id` in `channel.json`. Already-fetched videos are skipped by comparing against `videos[].video_id`.
@@ -81,9 +86,8 @@ Tests mock `eternity.summarizer._call_claude` / `eternity.synthesizer._call_clau
 
 - **All Python commands need `uv run`** — Python is not on PATH, uv manages the venv.
 - **`yt-dlp` flat extract returns `None` for `upload_date`** — treat missing as "include" rather than reject in backfill filter; use `item.get("upload_date") or ""`.
-- **FastAPI `TemplateResponse` signature**: `templates.TemplateResponse(request, "template.html", ctx)` — `request` is the first positional arg.
-- **`grep` in web search**: use `-rilF --` flags — `-F` for fixed string, `--` to end flags (prevents query strings starting with `-` from being parsed as options).
-- **Path traversal in web app**: `_safe_path()` in `web/app.py` validates all user-supplied path params are under `KNOWLEDGE_DIR`.
+- **`_slugify` is duplicated** — `build.py` has its own copy of `_slugify` (same logic as `watcher.py`). Keep them in sync if the slug algorithm ever changes.
+- **`docs/` is committed** — the static site output lives in `docs/` on `main` and is served by GitHub Pages (Settings → Pages → main, /docs). Do not gitignore it.
 - **Rate limits**: Tier 1 is 30k tokens/min. Process one episode at a time; re-running is safe.
 
 ---
