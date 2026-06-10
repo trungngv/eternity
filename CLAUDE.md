@@ -76,7 +76,7 @@ subprocess.run(
 )
 ```
 
-Uses the Pro account OAuth (keychain), not `ANTHROPIC_API_KEY`. Model is `claude-sonnet-4-6`.
+Uses the Pro account OAuth (keychain), not `ANTHROPIC_API_KEY`. Model is `claude-haiku-4-5`.
 
 Tests mock `eternity.summarizer._call_claude` / `eternity.synthesizer._call_claude` directly.
 

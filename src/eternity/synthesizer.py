@@ -29,7 +29,7 @@ Respond with JSON only:
 
 def _call_claude(system: str, user: str) -> str:
     result = subprocess.run(
-        ["claude", "-p", "--system-prompt", system, "--model", "claude-sonnet-4-6"],
+        ["claude", "-p", "--system-prompt", system, "--model", "claude-haiku-4-5"],
         input=user,
         capture_output=True,
         text=True,
