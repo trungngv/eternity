@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-05-27T10:45:09.428436+00:00",
+  "last_checked": "2026-06-09T22:57:43.861788+00:00",
   "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
@@ -607,7 +607,7 @@
       "url": "https://youtube.com/watch?v=RRdTfh1_88I",
       "fetched_date": "2026-05-27T10:09:23.434714+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "F_WmxUXbKZc",
@@ -615,7 +615,7 @@
       "url": "https://youtube.com/watch?v=F_WmxUXbKZc",
       "fetched_date": "2026-05-27T10:09:26.000747+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "-qVVcDi3s9c",
@@ -623,7 +623,7 @@
       "url": "https://youtube.com/watch?v=-qVVcDi3s9c",
       "fetched_date": "2026-05-27T10:09:28.489314+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "1n2rXx-IOyE",
@@ -631,7 +631,7 @@
       "url": "https://youtube.com/watch?v=1n2rXx-IOyE",
       "fetched_date": "2026-05-27T10:09:30.969809+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "lSIErua5q04",
@@ -639,7 +639,7 @@
       "url": "https://youtube.com/watch?v=lSIErua5q04",
       "fetched_date": "2026-05-27T10:09:33.140159+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "aO4RC70qU1U",
@@ -647,7 +647,7 @@
       "url": "https://youtube.com/watch?v=aO4RC70qU1U",
       "fetched_date": "2026-05-27T10:09:35.269046+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "DkAV3UvcNUI",
@@ -655,7 +655,7 @@
       "url": "https://youtube.com/watch?v=DkAV3UvcNUI",
       "fetched_date": "2026-05-27T10:09:39.360124+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "8ZiLLjtAtyU",
@@ -663,7 +663,7 @@
       "url": "https://youtube.com/watch?v=8ZiLLjtAtyU",
       "fetched_date": "2026-05-27T10:09:41.546691+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "-Dot-Uf1dkE",
@@ -671,7 +671,7 @@
       "url": "https://youtube.com/watch?v=-Dot-Uf1dkE",
       "fetched_date": "2026-05-27T10:09:44.288468+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "r6NUO_bymuA",
@@ -687,7 +687,7 @@
       "url": "https://youtube.com/watch?v=b_norXr5dR0",
       "fetched_date": "2026-05-27T10:09:48.889767+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "v9pipH75L_E",
@@ -695,7 +695,7 @@
       "url": "https://youtube.com/watch?v=v9pipH75L_E",
       "fetched_date": "2026-05-27T10:09:51.514871+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "mIS3LYxgVWc",
@@ -703,7 +703,7 @@
       "url": "https://youtube.com/watch?v=mIS3LYxgVWc",
       "fetched_date": "2026-05-27T10:09:53.763163+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "atXKntdX2UY",
@@ -711,7 +711,7 @@
       "url": "https://youtube.com/watch?v=atXKntdX2UY",
       "fetched_date": "2026-05-27T10:10:06.350882+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "yHjUApypNsU",
@@ -719,7 +719,7 @@
       "url": "https://youtube.com/watch?v=yHjUApypNsU",
       "fetched_date": "2026-05-27T10:10:08.743344+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "-10cairWi10",
@@ -727,7 +727,7 @@
       "url": "https://youtube.com/watch?v=-10cairWi10",
       "fetched_date": "2026-05-27T10:10:11.368480+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "7xIrgD6NxHI",
@@ -735,7 +735,7 @@
       "url": "https://youtube.com/watch?v=7xIrgD6NxHI",
       "fetched_date": "2026-05-27T10:10:13.838046+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "jZMbKvJqEVo",
@@ -743,7 +743,7 @@
       "url": "https://youtube.com/watch?v=jZMbKvJqEVo",
       "fetched_date": "2026-05-27T10:10:16.238726+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
     },
     {
       "video_id": "mGY2To_HW98",
@@ -751,7 +751,23 @@
       "url": "https://youtube.com/watch?v=mGY2To_HW98",
       "fetched_date": "2026-05-27T10:10:18.637329+00:00",
       "summarized_date": null,
-      "error": null
+      "error": "claude command failed: "
+    },
+    {
+      "video_id": "yBBhd0-Os74",
+      "title": "Mental Models That Change How You Think | Bill Gurley",
+      "url": "https://youtube.com/watch?v=yBBhd0-Os74",
+      "fetched_date": "2026-06-09T22:57:42.047612+00:00",
+      "summarized_date": null,
+      "error": "claude command failed: "
+    },
+    {
+      "video_id": "iGx8RDvMvsg",
+      "title": "The Hidden Pattern Behind Winning Products | Farmville creator Mark Pincus",
+      "url": "https://youtube.com/watch?v=iGx8RDvMvsg",
+      "fetched_date": "2026-06-09T22:57:43.861707+00:00",
+      "summarized_date": null,
+      "error": "claude command failed: "
     }
   ]
 }
