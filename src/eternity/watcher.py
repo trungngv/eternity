@@ -55,7 +55,7 @@ def _passes_filters(entry: VideoEntry, filters) -> bool:
 
 def list_channel_videos(channel_url: str) -> list[VideoEntry]:
     import yt_dlp
-    ydl_opts = {"extract_flat": True, "quiet": True, "no_warnings": True}
+    ydl_opts = {"extract_flat": True, "quiet": True, "no_warnings": True, "nocheckcertificate": True}
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         info = ydl.extract_info(channel_url, download=False)
     entries = []

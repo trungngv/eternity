@@ -90,6 +90,7 @@ def _download_subtitles(video_id: str, output_dir: Path) -> Path | None:
         "outtmpl": str(output_dir / "%(id)s.%(ext)s"),
         "quiet": True,
         "no_warnings": True,
+        "nocheckcertificate": True,
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([f"https://youtube.com/watch?v={video_id}"])
