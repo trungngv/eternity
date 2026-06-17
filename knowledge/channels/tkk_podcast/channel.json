@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-06-09T22:57:43.861788+00:00",
+  "last_checked": "2026-06-17T11:41:33.156821+00:00",
   "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
@@ -768,6 +768,14 @@
       "fetched_date": "2026-06-09T22:57:43.861707+00:00",
       "summarized_date": null,
       "error": "claude command failed: "
+    },
+    {
+      "video_id": "BaZwtB2GI8U",
+      "title": "The Book Whisperer: How to Write a New York Times Bestseller | Charlie Hoehn",
+      "url": "https://youtube.com/watch?v=BaZwtB2GI8U",
+      "fetched_date": "2026-06-12T05:53:32.948369+00:00",
+      "summarized_date": "2026-06-12T05:57:31.814351+00:00",
+      "error": null
     }
   ]
 }
