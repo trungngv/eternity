@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-06-09T22:57:43.861788+00:00",
+  "last_checked": "2026-08-01T23:46:09.879496+00:00",
   "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
@@ -768,6 +768,38 @@
       "fetched_date": "2026-06-09T22:57:43.861707+00:00",
       "summarized_date": null,
       "error": "claude command failed: "
+    },
+    {
+      "video_id": "UH3-p_8LPFE",
+      "title": "$4.6B CEO: Excellence Is the Capacity to Take Pain | Kaz Nejatian",
+      "url": "https://youtube.com/watch?v=UH3-p_8LPFE",
+      "fetched_date": "2026-08-01T23:46:07.492558+00:00",
+      "summarized_date": "2026-08-01T23:47:14.990779+00:00",
+      "error": null
+    },
+    {
+      "video_id": "JOh-9iaPcGU",
+      "title": "No.1 Performance Psychologist: The Secret to High Performance and Excellence",
+      "url": "https://youtube.com/watch?v=JOh-9iaPcGU",
+      "fetched_date": "2026-08-01T23:46:07.492730+00:00",
+      "summarized_date": null,
+      "error": "Claude returned invalid JSON for JOh-9iaPcGU: Expecting value: line 1 column 1 (char 0)\nRaw: Looking at this podcast transcript with Dr. Gio Valiante discussing performance psychology, I'll extract the key lessons:\n\n```json\n{\n  \"lessons\": [\n    {\n      \"title\": \"Most people underperform relat"
+    },
+    {
+      "video_id": "79320h28XFo",
+      "title": "#1 Gut Expert: How to\u00a0Repair\u00a0and Nourish Your Gut Microbiome",
+      "url": "https://youtube.com/watch?v=79320h28XFo",
+      "fetched_date": "2026-08-01T23:46:09.879243+00:00",
+      "summarized_date": "2026-08-01T23:49:01.863676+00:00",
+      "error": null
+    },
+    {
+      "video_id": "BaZwtB2GI8U",
+      "title": "The Book Whisperer: How to Write a New York Times Bestseller | Charlie Hoehn",
+      "url": "https://youtube.com/watch?v=BaZwtB2GI8U",
+      "fetched_date": "2026-08-01T23:46:09.879478+00:00",
+      "summarized_date": "2026-08-01T23:49:47.852996+00:00",
+      "error": null
     }
   ]
 }
