@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-08-04T10:32:40.585711+00:00",
+  "last_checked": "2026-08-05T09:43:52.122347+00:00",
   "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
@@ -805,9 +805,9 @@
       "video_id": "pduZ-bfcKAQ",
       "title": "Brad Jacobs: How Therapy Made Me Billions",
       "url": "https://youtube.com/watch?v=pduZ-bfcKAQ",
-      "fetched_date": "2026-08-04T10:32:40.585664+00:00",
-      "summarized_date": null,
-      "error": "claude command failed: Ignoring 6 permissions.allow entries from .claude/settings.json: this workspace has not been trusted. Run Claude Code interactively here once and accept the trust dialog, or set projects[\"/sessions/cool-great-wright/mnt/eternity\"].hasTrustDialogAccepted: true in /sessions/cool-great-wright/.claude.json.\n"
+      "fetched_date": "2026-08-05T09:43:52.122322+00:00",
+      "summarized_date": "2026-08-05T09:44:50.796410+00:00",
+      "error": null
     }
   ]
 }
