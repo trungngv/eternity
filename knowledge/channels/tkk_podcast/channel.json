@@ -1,5 +1,5 @@
 {
-  "last_checked": "2026-08-01T23:46:09.879496+00:00",
+  "last_checked": "2026-08-05T09:43:52.122347+00:00",
   "videos": [
     {
       "video_id": "6JoUcQ1qmAc",
@@ -799,6 +799,14 @@
       "url": "https://youtube.com/watch?v=BaZwtB2GI8U",
       "fetched_date": "2026-08-01T23:46:09.879478+00:00",
       "summarized_date": "2026-08-01T23:49:47.852996+00:00",
+      "error": null
+    },
+    {
+      "video_id": "pduZ-bfcKAQ",
+      "title": "Brad Jacobs: How Therapy Made Me Billions",
+      "url": "https://youtube.com/watch?v=pduZ-bfcKAQ",
+      "fetched_date": "2026-08-05T09:43:52.122322+00:00",
+      "summarized_date": "2026-08-05T09:44:50.796410+00:00",
       "error": null
     }
   ]
